@@ -32,3 +32,32 @@ a{
   color: black !important;
   text-decoration: none;
 }
+
+.hero-container{
+  display: flex;
+  padding: 10px 160px 10px 160px;
+  gap: 60px;
+  border: solid 1px black;
+  height: 520px;
+}
+
+.left-container, .right-container{
+  border: solid 1px blue;
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro{
+  border: solid 1px black;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 20px; /* space between icons */
+  justify-content: center; /* center on page */
+  margin: 2rem 0;
+  flex-wrap: wrap; /* optional if you have many icons */
+}
