@@ -3,12 +3,35 @@ import {
   SiGithub,
   SiInstagram,
   SiLinkedin,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiPostgresql,
   SiReact,
   SiTypescript,
   SiNodedotjs,
 } from "react-icons/si";
 import profile from './assets/profile.jpg';
+// import icons from 'simple-icons/icons.json';
 
+const projectCardData = [
+  {
+    name: "Intellitrade",
+    imageUrl: "public/projects/intellitrade.webp",
+    summary:
+      "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
+    github: "#",
+    live: "#",
+    icons: [
+      {
+        iconName: "SiNextdotjs",
+        iconColor: "#000000",
+      },
+    ],
+  },
+];
 function App() {
   return (
     <>
@@ -63,12 +86,6 @@ function App() {
         </div>
       </div>
 
-      {/* <div className="tech-stack">
-        <SiReact size={32} color="#61DAFB" />
-        <SiTypescript size={32} color="#3178C6" />
-        <SiNodedotjs size={32} color="#339933" />
-      </div> */}
-
       <div className="second-bottom-view">
         <div className="left-view">
           <div className="view-container">
@@ -107,48 +124,64 @@ function App() {
         </div>
         <div className="right-view">
           <p>
-            I’m a developer passionate about building applications that are not
-            only functional, but scalable and impactful. My work spans across
-            web, backend, and emerging cross-platform development, with a focus
-            on creating experiences that are both intuitive and technically
-            sound. I enjoy the challenge of taking an idea from scratch and
-            shaping it into a working product that balances thoughtful design
-            with solid engineering. My journey started with Python, which gave
-            me a strong foundation in programming fundamentals, but over time I
-            gravitated toward full-stack JavaScript. I’ve worked with HTML, CSS,
-            and JavaScript to build web interfaces, while React, TypeScript, and
-            Next.js allow me to design modern, responsive, and maintainable
-            applications. On the backend, I’ve explored Node.js with Express,
-            connecting to databases such as PostgreSQL, MongoDB, and MySQL, and
-            I particularly enjoy the reliability and structure that PostgreSQL
-            brings. More recently, I’ve been diving deeper into C#, exploring
-            data structures and algorithms, and extending that knowledge toward
-            .NET development. I see C# as a long-term focus for building robust
-            desktop, web, and mobile solutions — and I’m currently exploring
-            .NET MAUI as well as mobile frameworks like React Native and Flutter
-            to broaden my reach. My roadmap also includes cloud platforms like
-            AWS and Azure, alongside DevOps practices like CI/CD and pipelines,
-            because I believe a modern engineer should understand how to deliver
-            software end-to-end. Looking ahead, my goal is to grow into a
-            well-rounded software engineer who can seamlessly move between web
-            apps, mobile apps, and desktop apps, while also leveraging cloud and
-            DevOps tools to deliver complete solutions. Outside of coding, I
-            enjoy learning about new technologies, refining my problem-solving
-            skills, and imagining the kind of products that can make life
-            simpler and more efficient. For me, being a developer isn’t just
-            about writing code — it’s about solving problems in creative ways
-            and continuously pushing myself to improve.
+            I’m a developer passionate about building scalable, impactful
+            applications across web, backend, and cross-platform development. I
+            enjoy turning ideas into products that balance thoughtful design
+            with solid engineering.
           </p>
-          <div className='projects'>
+          <br />
+          <p>
+            My journey began with Python, but I gravitated toward full-stack
+            JavaScript. I use React, TypeScript, and Next.js to build modern,
+            responsive apps, and Node.js with PostgreSQL or MongoDB for reliable
+            backends. I’m also expanding into C# and .NET, exploring data
+            structures, algorithms, and cross-platform frameworks like .NET MAUI
+            and React Native.
+          </p>
+          <br />
+          <p>
+            I’m growing my skills in cloud (AWS, Azure) and DevOps practices to
+            deliver software end-to-end. My goal is to become a well-rounded
+            engineer who can create web, mobile, and desktop solutions while
+            leveraging modern cloud and CI/CD tools. Outside of coding, I love
+            learning new technologies and finding creative ways to solve
+            problems.
+          </p>
+          <div className="projects">
             <h2>Projects</h2>
-            <div className='Project1'>
-            </div>
-            <div className='Project2'>
-            </div>
-            <div className='Project3'>
+            <div className="project1">
+              <div className="project-image">
+                <img
+                  src="public/projects/intellitrade.webp"
+                  alt="intellitrade app ui"
+                />
+              </div>
+              <div className="project-description">
+                <h2>Intellitrade</h2>
+                <p>
+                  A full-stack web application that allows traders to connect
+                  broker accounts, configure automated trading bots, and track
+                  performance in real-time.
+                </p>
+                <div className="action-btn">
+                  <button>Live Demo</button>
+                  <button>Code</button>
+                </div>
+                <div className="tech-icons">
+                  <SiNextdotjs color="#000000" />
+                  <SiTypescript color="#3178C6" />
+                  <SiReact color="#61DAFB" />
+                  <SiNodedotjs color="#339933" />
+                  <SiPostgresql color="#336791" />
+                  <SiTailwindcss color="#06B6D4" />
+                </div>
+              </div>
             </div>
             <div>
-              <p>Designed in figma and coded in Visual Studio Code. Built using HTML, CSS, React and NodeJs</p>
+              <p>
+                Designed in figma and coded in Visual Studio Code. Built using
+                HTML, CSS, React and NodeJs
+              </p>
             </div>
           </div>
         </div>
