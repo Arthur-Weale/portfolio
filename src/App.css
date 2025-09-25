@@ -9,22 +9,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 h1, h2, h3{
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo{
+  font-size: 20px;
+  font-weight: 700;
 }
 
 nav{
-  border: solid 1px black;
   display: flex;
   padding: 10px;
   justify-content: space-around;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
 }
 
 ul{
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 li{
@@ -38,14 +46,14 @@ a{
 
 .hero-container{
   display: flex;
-  padding: 10px 160px 10px 160px;
-  gap: 60px;
-  border: solid 1px black;
+  /* padding: 10px 100px 10px 100px; */
+  margin: 0 350px;
+  gap: 30px;
   height: 720px;
 }
 
-.left-container, .right-container{
-  border: solid 1px blue;
+.left-container, .right-container, .bottom-left-container{
+  /* border: solid 1px blue; */
   padding: 10px;
   flex: 1;
   display: flex;
@@ -53,8 +61,64 @@ a{
   align-items: center;
 }
 
+.top-intro, .top-image-container{
+  margin-bottom: 150px;
+}
+
+.top-image-container{
+  opacity: 1;
+  /* transform: translateX(250px); */
+  animation: fadeAndScrolL 1s ease-in forwards;
+  animation-timeline: view();
+  animation-range: exit 0 cover 100%;
+}
+
+
+@keyframes fadeAndScrolL{
+  0%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+.top-intro{
+  opacity: 0;
+  transform: translateX(-250px);
+  animation: fadeInIntro 1s ease-in forwards;
+}
+
+@keyframes fadeInIntro {
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .intro{
-  border: solid 1px black;
+  /* border: solid 1px black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting{
+  font-size: 21px;
+  font-weight: 600;
+  color: grey;
+}
+
+.title{
+  /* font-size: 21px; */
+  font-weight: 600;
+  color: grey;
+}
+
+.intro p{
+  margin: 10px 0 10px 0;
 }
 
 .tech-stack {
@@ -85,9 +149,12 @@ a{
 }
 
 .second-bottom-view{
+  position: sticky;
+  top: 50px;
   display: flex;
-  margin-top: 50px;
-  padding: 50px;
+  margin: 0 100px;
+  padding: 0px 50px 0 50px;
+  /* border: solid 1px black; */
 }
 
 .right-view, .left-view{
@@ -99,7 +166,7 @@ a{
 
 .left-view{
   position: sticky;
-  top: 0;
+  top: 0px;
   height: 100vh;
 }
 
@@ -107,6 +174,10 @@ a{
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.projects h2{
+  margin-top: 20px;
 }
 
 .project1{
@@ -166,9 +237,33 @@ a{
   border-radius: 20px;
 }
 
+
+
 .tech-icons{
   display: flex;
   width: 100%;
   /* justify-content: space-between; */
   gap: 25px;
+}
+
+.socials{
+  display: flex;
+  padding: 10px 10px 10px 0;
+  gap: 20px;
+}
+
+.action-btn-container{
+  display: flex;
+  gap: 10px;
+}
+
+.profile-btn{
+  background: none;
+  border: solid 2px black;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.right-container img,.image-container img{
+  border-radius: 50%;
 }
