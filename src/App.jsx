@@ -19,7 +19,8 @@ import profile from './assets/profile.jpg';
 const projectCardData = [
   {
     name: "Intellitrade",
-    imageUrl: "public/projects/intellitrade.webp",
+    imageUrl: "/projects/intellitrade.webp",
+    imageAlt: "intellitrade app ui",
     summary:
       "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
     github: "#",
@@ -29,14 +30,72 @@ const projectCardData = [
         iconName: "SiNextdotjs",
         iconColor: "#000000",
       },
+      {
+        iconName: "SiTypescript",
+        iconColor: "#3178C6",
+      },
+      {
+        iconName: "SiReact",
+        iconColor: "#61DAFB",
+      },
+      {
+        iconName: "SiNodedotjs",
+        iconColor: "#339933",
+      },
+      {
+        iconName: "SiPostgresql",
+        iconColor: "#336791",
+      },
+      {
+        iconName: "SiTailwindcss",
+        iconColor: "#06B6D4",
+      },
+    ],
+  },
+  {
+    name: "Wanderwise",
+    imageUrl: "/projects/wanderwise.webp",
+    imageAlt: "wanderwise app ui",
+    summary:
+      "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
+    github: "#",
+    live: "#",
+    icons: [
+      {
+        iconName: "SiHtml5",
+        iconColor: "#E34F26",
+      },
+      {
+        iconName: "SiJavascript",
+        iconColor: "#F7DF1E",
+      },
+      {
+        iconName: "SiCss3",
+        iconColor: "#1572B6",
+      },
     ],
   },
 ];
+
+const iconMap = {
+  SiNextdotjs,
+  SiTypescript,
+  SiReact,
+  SiNodedotjs,
+  SiPostgresql,
+  SiTailwindcss,
+  SiHtml5,
+  SiJavascript,
+  SiCss3,
+};
+
 function App() {
   return (
     <>
       <nav>
-        <a href="#">Arthur.Dev</a>
+        <a href="#" className="logo">
+          Arthur.Dev
+        </a>
         <ul>
           <li>
             <a href="#">About</a>
@@ -54,33 +113,29 @@ function App() {
       </nav>
       <div className="hero-container">
         <div className="left-container">
-          <div className="intro">
-            <h1>Arthur Weale</h1>
-            <h2>Software Developer</h2>
-            <p>
-              I build responsive, user-friendly web applications using modern
-              tools like React, TypeScript, and Node.js. Passionate about clean
-              design, scalable code, and always learning.
-            </p>
+          <div className="intro top-intro">
+            <p className='greeting'>Hello, I'm</p>
+            <h1 className='name'>Arthur Weale</h1>
+            <h2 className='title'>Software Developer</h2>
             <div className="socials">
-              <SiLinkedin />
-              <SiGithub />
-              <SiInstagram />
+              <SiLinkedin size={30} />
+              <SiGithub size={30} />
+              <SiInstagram size={30} />
             </div>
-            <div className="btn-container">
-              <div>Connect</div>
-              <div>Resume</div>
+            <div className="action-btn-container">
+              <div className="profile-btn">Connect</div>
+              <div className="profile-btn">Resume</div>
             </div>
           </div>
         </div>
 
         <div className="right-container">
-          <div className="image-container">
+          <div className="image-container top-image-container">
             <img
               src={profile}
               alt="This my profile image"
-              width={"300px"}
-              height={"300px"}
+              width={"250px"}
+              height={"250px"}
             />
           </div>
         </div>
@@ -88,6 +143,17 @@ function App() {
 
       <div className="second-bottom-view">
         <div className="left-view">
+          <div className="bottom-left-container">
+            <div className="image-container">
+              <img
+                src={profile}
+                alt="This my profile image"
+                width={"200px"}
+                height={"200px"}
+              />
+            </div>
+          </div>
+
           <div className="view-container">
             <div className="view-bottom-container">
               <div className="intro">
@@ -99,25 +165,16 @@ function App() {
                   about clean design, scalable code, and always learning.
                 </p>
                 <div className="socials">
-                  <SiLinkedin />
-                  <SiGithub />
-                  <SiInstagram />
+                  <div className="socials">
+                    <SiLinkedin size={30} />
+                    <SiGithub size={30} />
+                    <SiInstagram size={30} />
+                  </div>
                 </div>
-                <div className="btn-container">
-                  <div>Connect</div>
-                  <div>Resume</div>
+                <div className="action-btn-container">
+                  <div className="profile-btn">Connect</div>
+                  <div className="profile-btn">Resume</div>
                 </div>
-              </div>
-            </div>
-
-            <div className="top-imageview-container">
-              <div className="image-container">
-                <img
-                  src={profile}
-                  alt="This my profile image"
-                  width={"300px"}
-                  height={"300px"}
-                />
               </div>
             </div>
           </div>
@@ -149,34 +206,33 @@ function App() {
           </p>
           <div className="projects">
             <h2>Projects</h2>
-            <div className="project1">
-              <div className="project-image">
-                <img
-                  src="public/projects/intellitrade.webp"
-                  alt="intellitrade app ui"
-                />
-              </div>
-              <div className="project-description">
-                <h2>Intellitrade</h2>
-                <p>
-                  A full-stack web application that allows traders to connect
-                  broker accounts, configure automated trading bots, and track
-                  performance in real-time.
-                </p>
-                <div className="action-btn">
-                  <button>Live Demo</button>
-                  <button>Code</button>
+            {projectCardData.map((card) => (
+              <div className="project1" key={card.name}>
+                <div className="project-image">
+                  <img src={card.imageUrl} alt={card.imageAlt} />
                 </div>
-                <div className="tech-icons">
-                  <SiNextdotjs color="#000000" />
-                  <SiTypescript color="#3178C6" />
-                  <SiReact color="#61DAFB" />
-                  <SiNodedotjs color="#339933" />
-                  <SiPostgresql color="#336791" />
-                  <SiTailwindcss color="#06B6D4" />
+                <div className="project-description">
+                  <h2>{card.name}</h2>
+                  <p>{card.summary}</p>
+                  <div className="action-btn">
+                    <button>Live Demo</button>
+                    <button>Code</button>
+                  </div>
+                  <div className="tech-icons">
+                    {card.icons.map((icon) => {
+                      const IconComponent = iconMap[icon.iconName];
+                      return (
+                        <IconComponent
+                          color={icon.iconColor}
+                          key={icon.iconName}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+
             <div>
               <p>
                 Designed in figma and coded in Visual Studio Code. Built using
