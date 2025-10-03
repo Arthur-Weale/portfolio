@@ -14,7 +14,11 @@ import {
   SiNodedotjs,
 } from "react-icons/si";
 import profile from './assets/profile.jpg';
-// import icons from 'simple-icons/icons.json';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, useEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const projectCardData = [
   {
@@ -90,6 +94,28 @@ const iconMap = {
 };
 
 function App() {
+  const introDivRef = useRef(null);
+  
+  useEffect(()=>{
+    const el = introDivRef.current;
+
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger: el, 
+        markers: true,
+        start: "top 25%",
+        end: "bottom 55%",
+        scrub: 1
+      }
+    });
+
+    tl.from(el, { opacity: 1, y: 0, x: 0, duration: 0.1, ease: "power2.out" }).to(el, {
+      opacity: 0,
+      x: -520,
+      y: 545,
+      ease: "power1.in",
+    });
+  }, [])
   return (
     <>
       <nav>
@@ -130,7 +156,7 @@ function App() {
         </div>
 
         <div className="right-container">
-          <div className="image-container top-image-container">
+          <div ref={introDivRef} className="image-container top-image-container">
             <img
               src={profile}
               alt="This my profile image"
@@ -144,12 +170,12 @@ function App() {
       <div className="second-bottom-view">
         <div className="left-view">
           <div className="bottom-left-container">
-            <div className="image-container">
+            <div className="image-container img-cont">
               <img
                 src={profile}
                 alt="This my profile image"
-                width={"200px"}
-                height={"200px"}
+                width={"250px"}
+                height={"250px"}
               />
             </div>
           </div>
