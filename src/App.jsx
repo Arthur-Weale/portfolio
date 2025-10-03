@@ -95,26 +95,58 @@ const iconMap = {
 
 function App() {
   const introDivRef = useRef(null);
+  const bottomImgRef = useRef(null);
+  const btmIntroRef = useRef(null);
   
   useEffect(()=>{
-    const el = introDivRef.current;
+    const el1 = introDivRef.current;
+    const el2 = bottomImgRef.current;
+    const el3 = btmIntroRef.current;
 
     const tl = gsap.timeline({
       scrollTrigger:{
-        trigger: el, 
-        markers: true,
+        trigger: el1, 
+        // markers: true,
         start: "top 25%",
         end: "bottom 55%",
         scrub: 1
       }
     });
 
-    tl.from(el, { opacity: 1, y: 0, x: 0, duration: 0.1, ease: "power2.out" }).to(el, {
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: el2,
+        start: "top 90%",
+        end: "top 100%",
+        scrub: 2,
+        // markers: true
+      }
+    })
+
+    const tl3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: el3,
+        start: "top 60%",
+        end: "bottom 70%",
+        scrub: 2,
+        // markers: true
+      },
+    });
+
+    tl.from(el1, { opacity: 1, y: 0, x: 0, duration: 0.1, ease: "power2.out" }).to(el1, {
       opacity: 0,
-      x: -520,
-      y: 545,
+      x: 350,
       ease: "power1.in",
     });
+
+    tl2
+      .from(el2, { opacity: 0, x: -250, duration: 0.1, ease: "power2.out"})
+      .to(el2, { opacity: 1, x: 0, ease: "power1.in", rotate: 360 });
+
+    tl3
+      .from(el3, { opacity: 0, x: -250, duration: 0.1, ease: "power2.out" })
+      .to(el3, { opacity: 1, x: 0, ease: "power1.in", duration: 1 });
+
   }, [])
   return (
     <>
@@ -140,9 +172,9 @@ function App() {
       <div className="hero-container">
         <div className="left-container">
           <div className="intro top-intro">
-            <p className='greeting'>Hello, I'm</p>
-            <h1 className='name'>Arthur Weale</h1>
-            <h2 className='title'>Software Developer</h2>
+            <p className="greeting">Hello, I'm</p>
+            <h1 className="name">Arthur Weale</h1>
+            <h2 className="title">Software Developer</h2>
             <div className="socials">
               <SiLinkedin size={30} />
               <SiGithub size={30} />
@@ -156,7 +188,10 @@ function App() {
         </div>
 
         <div className="right-container">
-          <div ref={introDivRef} className="image-container top-image-container">
+          <div
+            ref={introDivRef}
+            className="image-container top-image-container"
+          >
             <img
               src={profile}
               alt="This my profile image"
@@ -170,7 +205,7 @@ function App() {
       <div className="second-bottom-view">
         <div className="left-view">
           <div className="bottom-left-container">
-            <div className="image-container img-cont">
+            <div ref={bottomImgRef} className="image-container img-cont">
               <img
                 src={profile}
                 alt="This my profile image"
@@ -182,7 +217,7 @@ function App() {
 
           <div className="view-container">
             <div className="view-bottom-container">
-              <div className="intro">
+              <div ref={btmIntroRef} className="intro">
                 <h1>Arthur Weale</h1>
                 <h2>Software Developer</h2>
                 <p>
