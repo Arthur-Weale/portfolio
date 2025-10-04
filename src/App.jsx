@@ -22,13 +22,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projectCardData = [
   {
-    name: "Intellitrade",
+    name: "Intellitrade(In Progress)",
     imageUrl: "/projects/intellitrade.webp",
     imageAlt: "intellitrade app ui",
     summary:
       "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
-    github: "#",
-    live: "#",
+    github: "https://github.com/Arthur-Weale/intellitrade.git",
+    live: "https://intellitrade-nine.vercel.app/dashboard",
     icons: [
       {
         iconName: "SiNextdotjs",
@@ -62,8 +62,8 @@ const projectCardData = [
     imageAlt: "wanderwise app ui",
     summary:
       "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
-    github: "#",
-    live: "#",
+    github: "https://github.com/Arthur-Weale/wanderwise.git",
+    live: "https://arthur-weale.github.io/wanderwise/",
     icons: [
       {
         iconName: "SiHtml5",
@@ -127,9 +127,9 @@ function App() {
       scrollTrigger: {
         trigger: el3,
         start: "top 60%",
-        end: "bottom 70%",
+        end: "bottom 85%",
         scrub: 2,
-        // markers: true
+        //markers: true
       },
     });
 
@@ -156,14 +156,14 @@ function App() {
         </a>
         <ul>
           <li>
-            <a href="#">About</a>
+            <a href="#about">About</a>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <a href="#projects">Projects</a>
           </li>
-          <li>
+          {/* <li>
             <a href="#">Contact</a>
-          </li>
+          </li> */}
           <li>
             <a href="#">Connect</a>
           </li>
@@ -176,13 +176,29 @@ function App() {
             <h1 className="name">Arthur Weale</h1>
             <h2 className="title">Software Developer</h2>
             <div className="socials">
-              <SiLinkedin size={30} />
-              <SiGithub size={30} />
-              <SiInstagram size={30} />
+              <SiLinkedin
+                size={30}
+                onClick={() =>
+                  (window.location.href = "linkedin.com/in/arthur-weale")
+                }
+              />
+              <SiGithub
+                size={30}
+                onClick={() =>
+                  (window.location.href = "https://github.com/Arthur-Weale")
+                }
+              />
+              <SiInstagram
+                size={30}
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.instagram.com/saint_claire68/")
+                }
+              />
             </div>
             <div className="action-btn-container">
-              <div className="profile-btn">Connect</div>
-              <div className="profile-btn">Resume</div>
+              <div className="profile-btn con-btn">Connect</div>
+              <div className="profile-btn res-btn">Resume</div>
             </div>
           </div>
         </div>
@@ -219,7 +235,7 @@ function App() {
             <div className="view-bottom-container">
               <div ref={btmIntroRef} className="intro">
                 <h1>Arthur Weale</h1>
-                <h2>Software Developer</h2>
+                <h2 className="title">Software Developer</h2>
                 <p>
                   I build responsive, user-friendly web applications using
                   modern tools like React, TypeScript, and Node.js. Passionate
@@ -227,73 +243,102 @@ function App() {
                 </p>
                 <div className="socials">
                   <div className="socials">
-                    <SiLinkedin size={30} />
-                    <SiGithub size={30} />
-                    <SiInstagram size={30} />
+                    <SiLinkedin
+                      size={30}
+                      onClick={() =>
+                        (window.location.href = "linkedin.com/in/arthur-weale")
+                      }
+                    />
+                    <SiGithub
+                      size={30}
+                      onClick={() =>
+                        (window.location.href =
+                          "https://github.com/Arthur-Weale")
+                      }
+                    />
+                    <SiInstagram
+                      size={30}
+                      onClick={() =>
+                        (window.location.href =
+                          "https://www.instagram.com/saint_claire68/")
+                      }
+                    />
                   </div>
                 </div>
                 <div className="action-btn-container">
                   <div className="profile-btn">Connect</div>
-                  <div className="profile-btn">Resume</div>
+                  <div className="profile-btn res-btn">Resume</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="right-view">
-          <p>
-            I’m a developer passionate about building scalable, impactful
-            applications across web, backend, and cross-platform development. I
-            enjoy turning ideas into products that balance thoughtful design
-            with solid engineering.
-          </p>
-          <br />
-          <p>
-            My journey began with Python, but I gravitated toward full-stack
-            JavaScript. I use React, TypeScript, and Next.js to build modern,
-            responsive apps, and Node.js with PostgreSQL or MongoDB for reliable
-            backends. I’m also expanding into C# and .NET, exploring data
-            structures, algorithms, and cross-platform frameworks like .NET MAUI
-            and React Native.
-          </p>
-          <br />
-          <p>
-            I’m growing my skills in cloud (AWS, Azure) and DevOps practices to
-            deliver software end-to-end. My goal is to become a well-rounded
-            engineer who can create web, mobile, and desktop solutions while
-            leveraging modern cloud and CI/CD tools. Outside of coding, I love
-            learning new technologies and finding creative ways to solve
-            problems.
-          </p>
+          <section id="about">
+            <h2 className="about-header">About</h2>
+            <p>
+              I’m a developer passionate about building scalable, impactful
+              applications across web, backend, and cross-platform development.
+              I enjoy turning ideas into products that balance thoughtful design
+              with solid engineering.
+            </p>
+            <br />
+            <p>
+              My journey began with Python, but I gravitated toward full-stack
+              JavaScript. I use React, TypeScript, and Next.js to build modern,
+              responsive apps, and Node.js with PostgreSQL or MongoDB for
+              reliable backends. I’m also expanding into C# and .NET, exploring
+              data structures, algorithms, and cross-platform frameworks like
+              .NET MAUI and React Native.
+            </p>
+            <br />
+            <p>
+              I’m growing my skills in cloud (AWS, Azure) and DevOps practices
+              to deliver software end-to-end. My goal is to become a
+              well-rounded engineer who can create web, mobile, and desktop
+              solutions while leveraging modern cloud and CI/CD tools. Outside
+              of coding, I love learning new technologies and finding creative
+              ways to solve problems.
+            </p>
+          </section>
           <div className="projects">
-            <h2>Projects</h2>
-            {projectCardData.map((card) => (
-              <div className="project1" key={card.name}>
-                <div className="project-image">
-                  <img src={card.imageUrl} alt={card.imageAlt} />
-                </div>
-                <div className="project-description">
-                  <h2>{card.name}</h2>
-                  <p>{card.summary}</p>
-                  <div className="action-btn">
-                    <button>Live Demo</button>
-                    <button>Code</button>
+            <section id="projects" className="projects">
+              <h2 className="projects-header">Projects</h2>
+              {projectCardData.map((card) => (
+                <div className="project1" key={card.name}>
+                  <div className="project-image">
+                    <img src={card.imageUrl} alt={card.imageAlt} />
                   </div>
-                  <div className="tech-icons">
-                    {card.icons.map((icon) => {
-                      const IconComponent = iconMap[icon.iconName];
-                      return (
-                        <IconComponent
-                          color={icon.iconColor}
-                          key={icon.iconName}
-                        />
-                      );
-                    })}
+                  <div className="project-description">
+                    <h2>{card.name}</h2>
+                    <p>{card.summary}</p>
+                    <div className="action-btn">
+                      <button
+                        onClick={() => (window.location.href = card.live)}
+                      >
+                        Live Demo
+                      </button>
+                      <button
+                        onClick={() => (window.location.href = card.github)}
+                      >
+                        GitHub
+                      </button>
+                    </div>
+                    <div className="tech-icons">
+                      {card.icons.map((icon) => {
+                        const IconComponent = iconMap[icon.iconName];
+                        return (
+                          <IconComponent
+                            color={icon.iconColor}
+                            key={icon.iconName}
+                          />
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-
+              ))}
+            </section>
             <div>
               <p>
                 Designed in figma and coded in Visual Studio Code. Built using
