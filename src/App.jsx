@@ -109,7 +109,7 @@ function App() {
         // markers: true,
         start: "top 25%",
         end: "bottom 55%",
-        scrub: 1
+        scrub: 3
       }
     });
 
@@ -128,7 +128,7 @@ function App() {
         trigger: el3,
         start: "top 85%",
         end: "bottom 85%",
-        scrub: 2,
+        scrub: 3,
         //markers: true
       },
     });
