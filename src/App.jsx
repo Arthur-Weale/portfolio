@@ -129,6 +129,7 @@ function App() {
         start: "top 85%",
         end: "bottom 85%",
         scrub: 3,
+        invalidateOnRefresh: true,
         //markers: true
       },
     });
