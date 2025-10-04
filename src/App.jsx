@@ -63,7 +63,7 @@ const projectCardData = [
     summary:
       "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
     github: "https://github.com/Arthur-Weale/wanderwise.git",
-    live: "https://arthur-weale.github.io/wanderwise/",
+    live: "https://wanderwise-explorer.netlify.app/",
     icons: [
       {
         iconName: "SiHtml5",
