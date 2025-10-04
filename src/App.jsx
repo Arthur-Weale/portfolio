@@ -116,9 +116,9 @@ function App() {
     const tl2 = gsap.timeline({
       scrollTrigger: {
         trigger: el2,
-        start: "top 90%",
-        end: "top 100%",
-        scrub: 2,
+        start: "top 80%",
+        end: "top 600%",
+        scrub: true,
         // markers: true
       }
     })
@@ -126,9 +126,9 @@ function App() {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: el3,
-        start: "top 85%",
-        end: "bottom 85%",
-        scrub: 3,
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
         invalidateOnRefresh: true,
         //markers: true
       },
@@ -141,11 +141,11 @@ function App() {
     });
 
     tl2
-      .from(el2, { opacity: 0, x: -250, duration: 0.1, ease: "power2.out"})
+      .from(el2, { opacity: 0, x: -250, ease: "power2.out"})
       .to(el2, { opacity: 1, x: 0, ease: "power1.in"});
 
     tl3
-      .from(el3, { opacity: 0, x: -250, duration: 0.1, ease: "power2.out" })
+      .from(el3, { opacity: 0, x: -250, ease: "power2.out" })
       .to(el3, { opacity: 1, x: 0, ease: "power1.in", duration: 1 });
 
   }, [])
