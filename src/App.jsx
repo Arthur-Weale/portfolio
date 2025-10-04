@@ -117,7 +117,7 @@ function App() {
       scrollTrigger: {
         trigger: el2,
         start: "top 80%",
-        end: "top 600%",
+        end: "top 60%",
         scrub: true,
         // markers: true
       }
