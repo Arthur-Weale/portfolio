@@ -126,7 +126,7 @@ function App() {
     const tl3 = gsap.timeline({
       scrollTrigger: {
         trigger: el3,
-        start: "top 60%",
+        start: "top 85%",
         end: "bottom 85%",
         scrub: 2,
         //markers: true
