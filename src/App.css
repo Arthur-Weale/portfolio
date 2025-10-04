@@ -65,25 +65,19 @@ a{
   margin-bottom: 150px;
 }
 
-.top-image-container{
-  opacity: 1;
-  /* transform: translateX(250px); */
+/* .top-image-container{
+  opacity: 0;
+  transform: translateX(-250px); 
   animation: fadeAndScrolL 1s ease-in forwards;
-  animation-timeline: view();
-  animation-range: exit 0 cover 100%;
 }
 
 
 @keyframes fadeAndScrolL{
-  0%{
+  to{
     opacity: 1;
     transform: translateX(0);
   }
-  100%{
-    opacity: 0;
-    transform: translateY(100px);
-  }
-}
+} */
 
 .top-intro{
   opacity: 0;
@@ -176,12 +170,12 @@ a{
   gap: 20px;
 }
 
-.projects h2{
+/* .projects h2{
   margin-top: 20px;
-}
+} */
 
 .project1{
-  border: solid 2px rgb(0, 0, 0);
+  border: solid 2px grey;
   height: 220px;
   width: 100%;
   border-radius: 10px;
@@ -189,18 +183,6 @@ a{
   grid-template-columns: 1fr 3fr;
   padding: 10px;
   gap: 10px;
-}
-.project2{
-  border: solid 2px rgb(0, 0, 0);
-  height: 250px;
-  width: 100%;
-  border-radius: 10px;
-}
-.project3{
-  border: solid 2px rgb(0, 0, 0);
-  height: 250px;
-  width: 100%;
-  border-radius: 10px;
 }
 
 .project-description{
@@ -211,12 +193,14 @@ a{
 
 .project-description p{
   font-size: 14px;
+  color: rgb(0, 0, 0);
 }
+
 
 .project-image img{
   height: 150px;
   width: 250px;
-  border: solid 2px black;
+  border: solid 2px grey;
   border-radius: 10px;
 }
 
@@ -232,9 +216,19 @@ a{
 
 .action-btn button{
   background: none;
-  border: solid 2px black;
-  padding: 5px 10px;
+  border: solid 2px grey;
+  color: gray;
+  padding: 7px 21px;
   border-radius: 20px;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+.action-btn button:hover{
+  background: black;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  transform: translateY(-5px);
 }
 
 
@@ -259,11 +253,99 @@ a{
 
 .profile-btn{
   background: none;
-  border: solid 2px black;
+  border: solid 2px grey;
   padding: 5px 15px;
   border-radius: 20px;
+  color: grey !important;
 }
+
+/* .res-btn{
+  background: rgb(111, 110, 110) !important;
+} */
 
 .right-container img,.image-container img{
   border-radius: 50%;
+}
+
+.about-header, .projects-header{
+  margin: 20px 0 20px 0;
+}
+
+/* Animation */
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: #000000; 
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: grey !important;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+
+.profile-btn {
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.profile-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
+  background: #000000;
+  color: rgb(255, 255, 255) !important;
+  border: none;
+}
+
+
+.project1 {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project1:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0);
+}
+
+.tech-icons svg {
+  transition: transform 0.3s ease;
+}
+
+.tech-icons svg:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+
+
+.socials svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.socials svg:hover {
+  transform: scale(1.2);
+  /* color: #00ff88; */
 }
