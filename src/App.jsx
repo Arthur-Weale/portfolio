@@ -142,7 +142,7 @@ function App() {
 
     tl2
       .from(el2, { opacity: 0, x: -250, duration: 0.1, ease: "power2.out"})
-      .to(el2, { opacity: 1, x: 0, ease: "power1.in", rotate: 360 });
+      .to(el2, { opacity: 1, x: 0, ease: "power1.in"});
 
     tl3
       .from(el3, { opacity: 0, x: -250, duration: 0.1, ease: "power2.out" })
