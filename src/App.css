@@ -349,7 +349,7 @@ nav ul li a:hover::after {
 @media (max-width: 320px){
 
   .logo{
-    font-size: 30px;
+    font-size: 18px;
   }
 
   nav ul{
@@ -357,15 +357,15 @@ nav ul li a:hover::after {
   }
 
   .greeting{
-    font-size: 30px;
+    font-size: 18px;
   }
 
   .name{
-    font-size: 36px;
+    font-size: 22px;
   }
 
   .title{
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .intro{
@@ -377,6 +377,7 @@ nav ul li a:hover::after {
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
   margin: 0;
+  height: 435px;
 }
 
   .top-intro, .top-image-container {
@@ -385,15 +386,21 @@ nav ul li a:hover::after {
 
   .right-container{
     grid-row: 1;
+    height: 175px;
+  }
+
+  .left-container{
+    height: 250px;
   }
 
   .top-image-container img{
-    opacity: 1;
+    width: 150px;
+    height: auto;
   }
 
   .second-bottom-view {
     margin: 0;
-    padding: 15px;
+    padding: 0;
 }
 
   .left-view{
@@ -402,25 +409,63 @@ nav ul li a:hover::after {
 
   .right-view{
     width: 100%;
-    padding: 10px;
+    padding: 0;
 }
 
+  .about-section, .projects-section{
+    padding: 10px !important;
+  }
+
+  .projects-section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .about-header, .projects-header{
-    font-size: 30px;
+    font-size: 18px;
+    margin: 0;
   }
 
   .right-view p{
-    font-size: 26px;
+    font-size: 16px;
     font-family: Roboto;
-    line-height: 37px;
+    line-height: 24px;
   }
 
   .project1{
     display: flex;
     flex-direction: column;
-    height: auto; 
-    width: 100%;
-}
+    width: 300px;
+    height: auto;
+    align-content: center;
+    padding: 20px;
   }
 
+  .project-image img{
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .project-description h2{
+    font-size: 18px;
+  }
+
+  .action-btn{
+    justify-content: center;
+  }
+
+  .tech-icons{
+    justify-content: center;
+  }
+
+  .subheading-container{
+    padding: 10px 0 10px 10px;
+    background: rgba(225,225,225, 0.15);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    left: -35px;
+  }
+}
 
