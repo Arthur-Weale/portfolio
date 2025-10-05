@@ -349,6 +349,12 @@ nav ul li a:hover::after {
   display: none;
 }
 
+.projects-section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* Media Queries */
 @media (max-width: 320px){
 
