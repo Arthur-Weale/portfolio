@@ -345,6 +345,10 @@ nav ul li a:hover::after {
   transform: scale(1.2);
 }
 
+.view-bottom-container .greeting{
+  display: none;
+}
+
 /* Media Queries */
 @media (max-width: 320px){
 
@@ -591,3 +595,133 @@ nav ul li a:hover::after {
   }
 }
 
+/* Tablets: 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  nav {
+    justify-content: space-between;
+    padding: 10px 30px;
+  }
+
+  nav ul {
+    gap: 25px;
+    font-size: 14px;
+  }
+
+  .hero-container {
+    display: none;
+    margin: 0 50px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-container,
+  .right-container {
+    flex: none;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .top-image-container img {
+    width: 200px;
+    height: auto;
+  }
+
+  .top-intro {
+    text-align: center;
+  }
+
+  .intro {
+    padding: 0 20px;
+  }
+
+  .intro p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .second-bottom-view {
+    flex-direction: column;
+    margin: 0 30px;
+    padding: 0;
+  }
+
+  .left-view {
+    position: relative;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .right-view {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .project1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    gap: 15px;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .tech-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .projects-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  nav {
+    padding: 15px 50px;
+  }
+
+  .hero-container {
+    margin: 0 150px;
+    height: 600px;
+    gap: 40px;
+  }
+
+  .intro p {
+    line-height: 28px;
+  }
+
+  .project1 {
+    grid-template-columns: 1fr 2fr;
+    height: 250px;
+  }
+
+  .project-image img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .second-bottom-view {
+    margin: 0 60px;
+    padding: 0 20px;
+  }
+
+  .left-view {
+    position: sticky;
+    top: 80px;
+  }
+}
