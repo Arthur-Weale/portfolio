@@ -276,6 +276,10 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
+.hamburger{
+  display: none;
+}
+
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -359,12 +363,46 @@ nav ul li a:hover::after {
 @media (max-width: 320px){
 
   .logo{
-    font-size: 18px;
+    font-size: 28px !important;
   }
 
   nav ul{
     display: none;
   }
+
+  nav{
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* padding: 5px; */
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .hamburger span{
+    /* display: block; */
+    background-color: black !important;
+    height: 5px;
+    width: 100%;
+    border-radius: 1px;
+    transition: 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2){
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
   .greeting{
     font-size: 18px;

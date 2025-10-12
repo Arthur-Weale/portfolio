@@ -16,7 +16,7 @@ SiNodedotjs,
 import profile from "./assets/profile.jpg";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,6 +97,7 @@ function Home() {
 const introDivRef = useRef(null);
 const bottomImgRef = useRef(null);
 const btmIntroRef = useRef(null);
+const [isActive, setIsActive] = useState(false);
 
 useEffect(() => {
     const el1 = introDivRef.current;
@@ -180,7 +181,17 @@ return (
           <a href="#">Connect</a>
         </li>
       </ul>
+
+      <div className={`hamburger ${ isActive ? "active" : ""}`}
+      onClick={()=> setIsActive(!isActive)}>
+        <span className="top"></span>
+        <span className="middle"></span>
+        <span className="bottom"></span>
+      </div>
     </nav>
+
+    {}
+
     <div className="hero-container">
       <div className="left-container">
         <div className="intro top-intro">
