@@ -383,12 +383,12 @@ nav ul li a:hover::after {
     width: 30px;
     height: 20px;
     cursor: pointer;
+    /* border: solid 1px red; */
   }
 
   .hamburger span{
-    /* display: block; */
     background-color: black !important;
-    height: 5px;
+    height: 4px;
     width: 100%;
     border-radius: 1px;
     transition: 0.3s ease;
