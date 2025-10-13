@@ -2,9 +2,11 @@
 
 function Admin(){
     return (
-        <h1>This is the admin</h1>
-    )
+        <>
+            <h1>Project Manager</h1>
+        </>
+    );
 }
 
 
-export default Admin;
+export default Admin; 
