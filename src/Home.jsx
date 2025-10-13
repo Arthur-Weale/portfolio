@@ -97,8 +97,7 @@ return (
                   "_blank",
                   "noopener,noreferrer"
                 )
-              }
-            >
+              }>
               Connect
             </div>
             <div
@@ -108,8 +107,7 @@ return (
                 window.open(
                   "/projects/Arthur Weale_Resume-Junior Software Developer.pdf"
                 )
-              }
-            >
+              }>
               Resumé
             </div>
           </div>
@@ -164,8 +162,7 @@ return (
                       "_blank",
                       "noopener,noreferrer"
                     )
-                  }
-                >
+                  }>
                   Connect
                 </div>
                 <div
@@ -175,8 +172,7 @@ return (
                     window.open(
                       "/projects/Arthur Weale_Resume-Junior Software Developer.pdf"
                     )
-                  }
-                >
+                  }>
                   Resumé
                 </div>
               </div>
