@@ -28,7 +28,7 @@ const projectCardData = [
     summary:
     "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
     github: "https://github.com/Arthur-Weale/intellitrade.git",
-    live: "https://intellitrade-nine.vercel.app/dashboard",
+    live: "https://intellitrade-nine.vercel.app",
     icons: [
     {
         iconName: "SiNextdotjs",
@@ -61,7 +61,7 @@ const projectCardData = [
     imageUrl: "/projects/wanderwise.webp",
     imageAlt: "wanderwise app ui",
     summary:
-    "A full-stack web application that allows traders to connect broker accounts, configure automated trading bots, and track performance in real-time.",
+    "Wanderwise is a small travel planning app built with React and Vite. It lets users discover destinationsand preview trips with images and information.",
     github: "https://github.com/Arthur-Weale/wanderwise.git",
     live: "https://wanderwise-explorer.netlify.app/",
     icons: [
@@ -174,23 +174,41 @@ return (
         <li>
           <a href="#projects">Projects</a>
         </li>
-        {/* <li>
-            <a href="#">Contact</a>
-        </li> */}
         <li>
-          <a href="#">Connect</a>
+          <a
+            href="mailto:email@gmail.com?subject=Lets work together&body=hey"
+            target="_blank"
+          >
+            Connect
+          </a>
         </li>
       </ul>
 
-      <div className={`hamburger ${ isActive ? "active" : ""}`}
-      onClick={()=> setIsActive(!isActive)}>
+      <div
+        className={`hamburger ${isActive ? "active" : ""}`}
+        onClick={() => setIsActive(!isActive)}
+      >
         <span className="top"></span>
         <span className="middle"></span>
         <span className="bottom"></span>
       </div>
-    </nav>
 
-    {}
+      {isActive && (
+        <div className={`mobile-menu-container ${isActive ? "active" : ""}`}>
+          <ul className="mobile-menu">
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#">Connect</a>
+            </li>
+          </ul>
+        </div>
+      )}
+    </nav>
 
     <div className="hero-container">
       <div className="left-container">
@@ -202,26 +220,62 @@ return (
             <SiLinkedin
               size={30}
               onClick={() =>
-                (window.location.href = "linkedin.com/in/arthur-weale")
+                window.open(
+                  "linkedin.com/in/arthur-weale",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
               }
             />
             <SiGithub
               size={30}
               onClick={() =>
-                (window.location.href = "https://github.com/Arthur-Weale")
+                window.open(
+                  "https://github.com/Arthur-Weale",
+                  "_blank",
+                  window.open(
+                    "https://www.instagram.com/saint_claire68/",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                )
               }
             />
             <SiInstagram
               size={30}
               onClick={() =>
-                (window.location.href =
-                  "https://www.instagram.com/saint_claire68/")
+                window.open(
+                  "https://www.instagram.com/saint_claire68/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
               }
             />
           </div>
           <div className="action-btn-container">
-            <div className="profile-btn con-btn">Connect</div>
-            <div className="profile-btn res-btn">Resume</div>
+            <div
+              className="profile-btn"
+              onClick={() =>
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=youremail@gmail.com&su=Let’s%20Work%20Together&body=Hey%20Arthur,%20I%20saw%20your%20portfolio%20and...",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Connect
+            </div>
+            <div
+              className="profile-btn res-btn"
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                window.open(
+                  "/projects/Arthur Weale_Resume-Junior Software Developer.pdf"
+                )
+              }
+            >
+              Resumé
+            </div>
           </div>
         </div>
       </div>
@@ -269,27 +323,59 @@ return (
                   <SiLinkedin
                     size={30}
                     onClick={() =>
-                      (window.location.href = "linkedin.com/in/arthur-weale")
+                      window.open(
+                        "linkedin.com/in/arthur-weale",
+                        "_blank",
+                        "noopener,noreferrer"
+                      )
                     }
                   />
                   <SiGithub
                     size={30}
                     onClick={() =>
-                      (window.location.href = "https://github.com/Arthur-Weale")
+                      window.open(
+                        "https://github.com/Arthur-Weale",
+                        "_blank",
+                        "noopener,noreferrer"
+                      )
                     }
                   />
                   <SiInstagram
                     size={30}
                     onClick={() =>
-                      (window.location.href =
-                        "https://www.instagram.com/saint_claire68/")
+                      window.open(
+                        "https://www.instagram.com/saint_claire68/",
+                        "_blank",
+                        "noopener,noreferrer"
+                      )
                     }
                   />
                 </div>
               </div>
               <div className="action-btn-container">
-                <div className="profile-btn">Connect</div>
-                <div className="profile-btn res-btn">Resume</div>
+                <div
+                  className="profile-btn"
+                  onClick={() =>
+                    window.open(
+                      "https://mail.google.com/mail/?view=cm&fs=1&to=youremail@gmail.com&su=Let’s%20Work%20Together&body=Hey%20Arthur,%20I%20saw%20your%20portfolio%20and...",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                >
+                  Connect
+                </div>
+                <div
+                  className="profile-btn res-btn"
+                  style={{ cursor: "pointer" }}
+                  onClick={() =>
+                    window.open(
+                      "/projects/Arthur Weale_Resume-Junior Software Developer.pdf"
+                    )
+                  }
+                >
+                  Resumé
+                </div>
               </div>
             </div>
           </div>
@@ -348,12 +434,24 @@ return (
                     <p>{card.summary}</p>
                     <div className="action-btn">
                       <button
-                        onClick={() => (window.location.href = card.live)}
+                        onClick={() =>
+                          window.open(
+                            card.live,
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
                       >
                         Live Demo
                       </button>
                       <button
-                        onClick={() => (window.location.href = card.github)}
+                        onClick={() =>
+                          window.open(
+                            card.github,
+                            "_blank",
+                            "noopener,noreferrer"
+                          )
+                        }
                       >
                         GitHub
                       </button>
