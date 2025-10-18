@@ -855,3 +855,76 @@ nav ul li a:hover::after {
     top: 80px;
   }
 }
+
+/* Admin Dashboard */
+.panel-container{
+  display: flex;
+  border: solid 1px red;
+  gap: 10px;
+  padding: 20px;
+}
+
+.left-panel, .right-panel{
+  border: solid 2px gray;
+  border-radius: 10px;
+  flex: 1;
+  /* height: 85vh; */
+  padding: 10px;
+}
+
+.add-project-btn{
+  background: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  background-color: #1DA1F2;
+  color: white;
+  display: flex;
+}
+
+.project-form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-project-image img{
+  height: 80px;
+  width: 160px;
+  border: solid 1px grey;
+}
+
+.project-admin{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  height: 110px;
+  padding: 10px;
+  border: solid 1px grey;
+  border-radius: 10px;
+}
+
+.project-description-admin h2{
+  font-size: medium;
+}
+
+.project-description-admin p{
+  font-size: small;
+}
+
+.project-description-admin{
+  width: 50%;
+}
+
+.projects-header-admin{
+  font-size: large;
+  margin: 10px 0 10px;
+}
+
+.card-controls{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+}
