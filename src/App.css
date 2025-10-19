@@ -884,7 +884,7 @@ nav ul li a:hover::after {
 }
 
 .project-form{
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 10px;
 }
@@ -927,4 +927,8 @@ nav ul li a:hover::after {
   align-items: center;
   justify-content: space-around;
   gap: 5px;
+}
+
+.project-form.active{
+  display: flex;
 }
