@@ -1,6 +1,14 @@
-function AddProject(){
+function AddProject({isActive}){
+  const handleSubmit = (event)=> {
+    event.preventDefault();
+  }
+
     return (
-      <form className="project-form" action="">
+      <form
+        className={`project-form ${isActive ? "active" : ""}`}
+        action=""
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="name">Project Name</label>
         <input type="text" id="name" />
 
