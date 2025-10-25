@@ -6,32 +6,72 @@ function AddProject({isActive}){
     description: "",
     live: "",
     github: "",
-
+    image : null
   });
 
   const handleChange = (e)=>{
-    const {name , value} = e.target
+    const {name , value, files} = e.target
 
-    setFormData((prevData)=>({
-      ...prevData,
-      [name]: value,
-  }))
-  }
+    if(name == "image"){
+      setFormData((prevData) => ({
+        ...prevData,
+        image: files[0],
+      }));
+    }else{
+      setFormData((prevData)=>({
+        ...prevData,
+        [name]: value,
+    }))
+    }
+  }  
+
 
   const handleSubmit = async(event) => {
     event.preventDefault();
 
-    const response = await fetch("http://localhost:3000/project",{
+    console.log(formData.image)
+
+    const imageFormData = new FormData();
+    imageFormData.append("file", formData.image)
+    imageFormData.append("upload_preset", "portfolio")
+
+    try {
+
+    const cloudResponse = await fetch(
+      "https://api.cloudinary.com/v1_1/dqsfphdsl/image/upload",
+      {
+        method: "POST",
+        body: imageFormData,
+      }
+    );
+
+    const cloudResult = await cloudResponse.json();
+    console.log(cloudResult.resource_type);
+
+    const projectData = {
+      name: formData.name,
+      description: formData.description,
+      live: formData.live,
+      github: formData.github,
+      image: cloudResult.secure_url,
+    };
+
+    console.log(projectData.image)
+
+    const response = await fetch("http://localhost:3000/project", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
-    })
+      body: JSON.stringify(projectData),
+    });
 
     const result = await response.json();
     console.log(result);
-  }
+    } catch (error) {
+      console.log("failed to submit form", error)
+    }
+}
 
   return (
     <form
@@ -45,13 +85,13 @@ function AddProject({isActive}){
       <input type="text" id="description" name="description"  value={formData.description} onChange={handleChange}/>
 
       <label htmlFor="live">Live Url</label>
-      <input type="textarea" id="live" name="live" value={formData.live} onChange={handleChange}/>
+      <input type="text" id="live" name="live" value={formData.live} onChange={handleChange}/>
 
       <label htmlFor="github">Github Url</label>
       <input type="text" id="github" name="github" value={formData.github} onChange={handleChange}/>
 
       <label htmlFor="image">Image</label>
-      <input type="file" accept="image/*" id="image" name="image" />
+      <input type="file" accept="image/*" id="image" name="image" onChange={handleChange}/>
       <button
         className="add-project-btn"
         type="submit"
@@ -62,5 +102,4 @@ function AddProject({isActive}){
     </form>
   );
 }
-
 export default AddProject;
