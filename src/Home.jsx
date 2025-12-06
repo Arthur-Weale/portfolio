@@ -10,7 +10,6 @@ import Socials from "./view/components/ui/Social";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 function Home() {
 const introDivRef = useRef(null);
 const bottomImgRef = useRef(null);
@@ -27,7 +26,6 @@ useEffect(() => {
         const tl = gsap.timeline({
             scrollTrigger: {
             trigger: el1,
-            // markers: true,
             start: "top 25%",
             end: "bottom 55%",
             scrub: 3,
