@@ -18,6 +18,7 @@ const insertProject = async(formData)=>{
             live: formData.live,
             github: formData.github,
             image:formData.image,
+            stack: formData.stack
         });
         console.log("Inserted project:", projectModel);
         console.log("Connected DB:", mongoose.connection.name); //Logs the connection name

@@ -7,7 +7,8 @@ const projectSchema = new Schema({ //The project Model schema defines the shape 
     description: String, 
     github: String, 
     live: String,
-    image: String
+    image: String,
+    stack: [String]
 });
 
 export default projectSchema; //Exporting the schema.
