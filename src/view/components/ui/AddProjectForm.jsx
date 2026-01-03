@@ -6,7 +6,8 @@ function AddProject({isActive}){
     description: "",
     live: "",
     github: "",
-    image : null
+    image : null,
+    stack: ""
   });
 
   const handleChange = (e)=>{
@@ -54,6 +55,7 @@ function AddProject({isActive}){
       live: formData.live,
       github: formData.github,
       image: cloudResult.secure_url,
+      stack: formData.stack.split(",").map(item => item.trim())
     };
 
     console.log(projectData.image)
@@ -79,19 +81,58 @@ function AddProject({isActive}){
       onSubmit={handleSubmit}
     >
       <label htmlFor="name">Project Name</label>
-      <input type="text" id="name" name="name" value={formData.name}  onChange={handleChange}/>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
 
       <label htmlFor="description">Description</label>
-      <input type="text" id="description" name="description"  value={formData.description} onChange={handleChange}/>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        value={formData.description}
+        onChange={handleChange}
+      />
 
       <label htmlFor="live">Live Url</label>
-      <input type="text" id="live" name="live" value={formData.live} onChange={handleChange}/>
+      <input
+        type="text"
+        id="live"
+        name="live"
+        value={formData.live}
+        onChange={handleChange}
+      />
 
       <label htmlFor="github">Github Url</label>
-      <input type="text" id="github" name="github" value={formData.github} onChange={handleChange}/>
+      <input
+        type="text"
+        id="github"
+        name="github"
+        value={formData.github}
+        onChange={handleChange}
+      />
 
       <label htmlFor="image">Image</label>
-      <input type="file" accept="image/*" id="image" name="image" onChange={handleChange}/>
+      <input
+        type="file"
+        accept="image/*"
+        id="image"
+        name="image"
+        onChange={handleChange}
+      />
+
+      <label htmlFor="live">Tech Stack</label>
+      <input
+        type="text"
+        id="stack"
+        name="stack"
+        value={formData.stack}
+        onChange={handleChange}
+      />
       <button
         className="add-project-btn"
         type="submit"
