@@ -8,12 +8,11 @@ function Admin() {
     return <>
         <h1>Project Manager</h1> 
         <div className="panel-container">
-        <div className="left-panel">
-            <AddProjectButton toggleForm={()=> setIsFormActive(prev => !prev)} /> 
-            <AddProject isActive={isFormActive}/>
-            <ProjectCardAdmin/>
-        </div>
-        <div className="right-panel"></div>
+            <div className="left-panel">
+                <AddProjectButton toggleForm={()=> setIsFormActive(prev => !prev)} /> 
+                <AddProject isActive={isFormActive}/>
+                <ProjectCardAdmin/>
+            </div>
         </div>
     </>;
 }
