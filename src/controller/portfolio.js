@@ -8,7 +8,17 @@ await initDb();
 //delete mongoose.connection.models['Project']; //Deletes the model from cache.
 const ProjectModel = mongoose.model("Project", projectSchema);
 
-const insertProject = async(formData)=>{
+export const getProjects = async (userId) => {
+    try {
+        const result = await ProjectModel.find({userId})
+        return result;
+    } catch (error) {
+        console.log(error)
+    }
+    
+}
+
+export const insertProject = async(formData)=>{
     try {
         await initDb(); //Initialises the database connection
         console.log("Inserting project:", formData);
@@ -30,4 +40,26 @@ const insertProject = async(formData)=>{
     }
 }
 
-export default insertProject;
+export const updateProject = async(projectId)=>{
+    try {
+        const updatedProject = await ProjectModel.findOneAndUpdate({id: projectId})
+        if(!updatedProject) {
+            throw new Error("Could not update project");
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const deleteProject = async (projectId) => {
+    try {
+        const deletedProject = await ProjectModel.findOneAndDelete({id: projectId})
+        if(!deletedProject){
+            throw new Error("The project could not be deleted or project does noe exist")
+        } 
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+//export default insertProject;
