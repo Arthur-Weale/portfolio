@@ -32,7 +32,7 @@ router.post("/project", async (req, res)=> { //Route handler function handles th
     }
 })
 
-router.delete("delete/:id", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
     try {
         const idToDelete = req.params.id;
         const response = await deleteProject(idToDelete);
