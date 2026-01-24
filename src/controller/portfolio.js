@@ -1,9 +1,17 @@
 import mongoose from "mongoose";
 import initDb from "../model/database.js"
 import projectSchema from "../model/schema.js";
+import { v2 as cloudinary } from 'cloudinary';
+import dotenv from "dotenv";
+dotenv.config()
 
 await initDb();
 
+cloudinary.config({
+  cloud_name: "dqsfphdsl",
+  api_key: process.env.CLOUDINARY_KEY, 
+  api_secret: process.env.CLOUDINARY_SECRET 
+});
 // Delete the model if it already exists (only in dev!)//Remove in production
 //delete mongoose.connection.models['Project']; //Deletes the model from cache.
 const ProjectModel = mongoose.model("Project", projectSchema);
@@ -15,7 +23,6 @@ export const getProjects = async (userId) => {
     } catch (error) {
         console.log(error)
     }
-    
 }
 
 export const insertProject = async(formData)=>{
@@ -53,13 +60,24 @@ export const updateProject = async(projectId)=>{
 
 export const deleteProject = async (projectId) => {
     try {
-        const deletedProject = await ProjectModel.findOneAndDelete({id: projectId})
+        const deletedProject = await ProjectModel.findOneAndDelete({_id: projectId})
+        console.log(deletedProject);
+        const public_url= deletedProject.image
+        const public_id = public_url.split("/").pop().split(".")[0];
+        cloudinary.uploader.destroy(public_id, (result, error)=>{
+            console.log(result, error)
+            if(result && result.result === "ok"){
+                console.log("image deleted succesfully")
+            }
+        })
+        console.log(public_id)
         if(!deletedProject){
-            throw new Error("The project could not be deleted or project does noe exist")
+            throw new Error("The project could not be deleted or project does not exist")
+        }else{
+            console.log("Project successfully deleted✅")
         } 
     } catch (error) {
         console.log(error)
     }
+    return deleteProject;
 }
-
-//export default insertProject;
