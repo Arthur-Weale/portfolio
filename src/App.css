@@ -155,10 +155,6 @@ a{
   gap: 20px;
 }
 
-/* .projects h2{
-  margin-top: 20px;
-} */
-
 .project1{
   border: solid 2px grey;
   height: 220px;
@@ -201,7 +197,7 @@ a{
 
 .action-btn button{
   background: none;
-  border: solid 2px grey;
+  border: solid 2px lightgrey;
   color: gray;
   padding: 7px 21px;
   border-radius: 20px;
@@ -214,13 +210,6 @@ a{
   color: white;
   border-radius: 20px;
   transform: translateY(-5px);
-}
-
-.tech-icons{
-  display: flex;
-  width: 100%;
-  /* justify-content: space-between; */
-  gap: 25px;
 }
 
 .socials{
@@ -314,14 +303,14 @@ nav ul li a:hover::after {
   color: rgb(0, 0, 0);
 }
 
-.tech-icons svg {
+/* .tech-icons svg {
   transition: transform 0.3s ease;
 }
 
 .tech-icons svg:hover {
   transform: scale(1.2);
   filter: brightness(1.3);
-}
+} */
 
 
 .socials svg {
@@ -711,9 +700,9 @@ nav ul li a:hover::after {
     justify-content: center;
   }
 
-  .tech-icons{
+  /* .tech-icons{
     justify-content: center;
-  }
+  } */
 
   .subheading-container{
     padding: 10px 0 10px 10px;
@@ -803,10 +792,10 @@ nav ul li a:hover::after {
     max-width: 400px;
   }
 
-  .tech-icons {
+  /* .tech-icons {
     justify-content: center;
     flex-wrap: wrap;
-  }
+  } */
 
   .socials {
     justify-content: center;
@@ -859,18 +848,20 @@ nav ul li a:hover::after {
 /* Admin Dashboard */
 .panel-container{
   display: flex;
+  flex-direction: column;
   border: solid 1px red;
   gap: 10px;
   padding: 20px;
+  width: 100vw;
+  height: 100vh;
 }
 
-.left-panel, .right-panel{
+/* .left-panel, .right-panel{
   border: solid 2px gray;
   border-radius: 10px;
   flex: 1;
-  /* height: 85vh; */
   padding: 10px;
-}
+} */
 
 .add-project-btn{
   background: none;
@@ -884,7 +875,7 @@ nav ul li a:hover::after {
 }
 
 .project-form{
-  display: none;
+  /* display: none; */
   flex-direction: column;
   gap: 10px;
 }
@@ -929,6 +920,52 @@ nav ul li a:hover::after {
   gap: 5px;
 }
 
-.project-form.active{
+.project-form{
   display: flex;
+}
+
+input{
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6); /* dark transparent */
+
+}
+
+.modal{
+  width: 50%;
+  background: white;
+  padding: 30px;
+  border-radius: 13px;
+  max-width: 500px;
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.techstack-container{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tech-icons{
+  border: 1px solid lightgray;
+  padding: 5px 7px;
+  border-radius: 13px;
+  font-size: small;
+  color: gray;
 }
