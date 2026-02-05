@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "697d38300770eddccb573ffd",
+    "name": "Arthur Weale",
+    "description": "Personal portfolio showcasing my projects and skills.",
+    "github": "https://github.com/arthurweale",
+    "live": "https://arthurweale.dev",
+    "image": "https://res.cloudinary.com/dqsfphdsl/image/upload/v1769814063/arthur.png",
+    "stack": ["HTML", "JavaScript", "CSS", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js", "Node.js" ],
+    "__v": 0
+  },
+  {
+    "_id": "697d38300770eddccb573ffe",
+    "name": "Clip Extension",
+    "description": "A Chrome extension for organizing and securing bookmarks.",
+    "github": "https://github.com/arthurweale/clip",
+    "live": "https://clip.app",
+    "image": "https://res.cloudinary.com/dqsfphdsl/image/upload/v1769814063/clip.png",
+    "stack": ["JavaScript", "Chrome API", "CSS"],
+    "__v": 0
+  },
+  {
+    "_id": "697d38300770eddccb573fff",
+    "name": "Daily Study",
+    "description": "An educational platform curating study resources for students.",
+    "github": "https://github.com/arthurweale/daily-study",
+    "live": "https://daily.study",
+    "image": "https://res.cloudinary.com/dqsfphdsl/image/upload/v1769814063/dailystudy.png",
+    "stack": ["HTML", "JavaScript", "Node.js"],
+    "__v": 0
+  },
+  {
+    "_id": "697d38300770eddccb574000",
+    "name": "YouTube MP3 Converter",
+    "description": "A fast and safe YouTube to MP3 conversion web app.",
+    "github": "https://github.com/arthurweale/yt-mp3",
+    "live": "https://ytmp3.safe",
+    "image": "https://res.cloudinary.com/dqsfphdsl/image/upload/v1769814063/ytmp3.png",
+    "stack": ["JavaScript", "Node.js", "FFmpeg"],
+    "__v": 0
+  },
+  {
+    "_id": "697d38300770eddccb574001",
+    "name": "Exam Practice Tool",
+    "description": "A web app that helps students practice and review past exam papers.",
+    "github": "https://github.com/arthurweale/exam-practice",
+    "live": "https://exampractice.app",
+    "image": "https://res.cloudinary.com/dqsfphdsl/image/upload/v1769814063/exam.png",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "__v": 0
+  }
+]
