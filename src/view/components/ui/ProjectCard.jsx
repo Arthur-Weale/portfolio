@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 async function getProjectCardData(){
-  const url = "http://localhost:3000/projects"
+  const url = "src/model/projects.json";
 
   try {
     console.log("Hey there dumb dumb this function is working");
@@ -29,65 +29,50 @@ function ProjectCard(){
     fetchData()
   }, [])
 
-    return(
-<section id="projects" className="projects">
-            <div className="subheading-container">
-              <h2 className="projects-header">Projects</h2>
-            </div>
-            <div className="projects-section">
-              {projects.map((card) => (
-                <div className="project1" key={card._id}>
-                  <div className="project-image">
-                    <img
-                      src={card.image}
-                      alt={card.imageAlt}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="project-description">
-                    <h2>{card.name}</h2>
-                    <p>{card.description}</p>
-                    <div className="action-btn">
-                      <button
-                        onClick={() =>
-                          window.open(
-                            card.live,
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                      >
-                        Live Demo
-                      </button>
-                      <button
-                        onClick={() =>
-                          window.open(
-                            card.github,
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                      >
-                        GitHub
-                      </button>
-                    </div>
-                    {/* <div className="tech-icons">
-                      {card.icons.map((icon) => {
-                        const IconComponent = iconMap[icon.iconName];
-                        return (
-                          <IconComponent
-                            color={icon.iconColor}
-                            key={icon.iconName}
-                          />
-                        );
-                      })}
-                    </div> */}
-                  </div>
+    return (
+      <section id="projects" className="projects">
+        <div className="subheading-container">
+          <h2 className="projects-header">Projects</h2>
+        </div>
+        <div className="projects-section">
+          {projects.map((card) => (
+            <div className="project1" key={card._id}>
+              <div className="project-image">
+                <img src={card.image} alt={card.imageAlt} loading="lazy" />
+              </div>
+              <div className="project-description">
+                <h2>{card.name}</h2>
+                <p>{card.description}</p>
+                <div className="action-btn">
+                  <button
+                    onClick={() =>
+                      window.open(card.live, "_blank", "noopener,noreferrer")
+                    }
+                  >
+                    Live Demo
+                  </button>
+                  <button
+                    onClick={() =>
+                      window.open(card.github, "_blank", "noopener,noreferrer")
+                    }
+                  >
+                    GitHub
+                  </button>
                 </div>
-              ))}
+                <div className="techstack-container">
+                  {card.stack.map((technology, index) => (
+                    <div className="tech-icons" key={index}>
+                      {technology}
+                    </div>
+                  ))}                  
+                </div>
+
+              </div>
             </div>
-          </section>
-    )
+          ))}
+        </div>
+      </section>
+    );
 }
 
 export default ProjectCard
