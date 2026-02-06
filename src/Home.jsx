@@ -7,6 +7,7 @@ import ProjectCard from "./view/components/ui/ProjectCard";
 import About from "./view/components/ui/About";
 import Navigation from "./view/components/ui/Navigation";
 import Socials from "./view/components/ui/Social";
+import { CiGlobe } from "react-icons/ci";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,14 +79,18 @@ useEffect(() => {
 }, []);
 return (
   <>
-    <Navigation/>
+    <Navigation />
     <div className="hero-container">
       <div className="left-container">
         <div className="intro top-intro">
           <p className="greeting">Hello, I'm</p>
           <h1 className="name">Arthur Weale</h1>
           <h2 className="title">Software Developer</h2>
-          <Socials/>
+          <p className="location">
+            <CiGlobe />
+            Zimbabwe, ZW
+          </p>
+          <Socials />
           <div className="action-btn-container">
             <div
               className="profile-btn"
@@ -93,9 +98,10 @@ return (
                 window.open(
                   "https://mail.google.com/mail/?view=cm&fs=1&to=youremail@gmail.com&su=Let’s%20Work%20Together&body=Hey%20Arthur,%20I%20saw%20your%20portfolio%20and...",
                   "_blank",
-                  "noopener,noreferrer"
+                  "noopener,noreferrer",
                 )
-              }>
+              }
+            >
               Connect
             </div>
             <div
@@ -103,9 +109,10 @@ return (
               style={{ cursor: "pointer" }}
               onClick={() =>
                 window.open(
-                  "/projects/Arthur Weale_Resume-Junior Software Developer.pdf"
+                  "/projects/Arthur Weale_Resume-Junior Software Developer.pdf",
                 )
-              }>
+              }
+            >
               Resumé
             </div>
           </div>
@@ -144,13 +151,17 @@ return (
             <div ref={btmIntroRef} className="intro">
               <p className="greeting">Hello, I'm</p>
               <h1>Arthur Weale</h1>
+              <p className="location">
+                <CiGlobe />
+                Zimbabwe, ZW
+              </p>
               <h2 className="title">Software Developer</h2>
               <p>
                 I build responsive, user-friendly web applications using modern
                 tools like React, TypeScript, and Node.js. Passionate about
                 clean design, scalable code, and always learning.
               </p>
-              <Socials/>
+              <Socials />
               <div className="action-btn-container">
                 <div
                   className="profile-btn"
@@ -158,9 +169,10 @@ return (
                     window.open(
                       "https://mail.google.com/mail/?view=cm&fs=1&to=youremail@gmail.com&su=Let’s%20Work%20Together&body=Hey%20Arthur,%20I%20saw%20your%20portfolio%20and...",
                       "_blank",
-                      "noopener,noreferrer"
+                      "noopener,noreferrer",
                     )
-                  }>
+                  }
+                >
                   Connect
                 </div>
                 <div
@@ -168,9 +180,10 @@ return (
                   style={{ cursor: "pointer" }}
                   onClick={() =>
                     window.open(
-                      "/projects/Arthur Weale_Resume-Junior Software Developer.pdf"
+                      "/projects/Arthur Weale_Resume-Junior Software Developer.pdf",
                     )
-                  }>
+                  }
+                >
                   Resumé
                 </div>
               </div>
