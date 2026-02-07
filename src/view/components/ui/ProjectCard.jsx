@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 async function getProjectCardData(){
-  const url = "src/model/projects.json";
+  const url = "/projects/projects.json";
 
   try {
     console.log("Hey there dumb dumb this function is working");
@@ -11,7 +11,7 @@ async function getProjectCardData(){
     console.log(result)
     return result;
   } catch (error) {
-    console.log('Failed to get projecs', error)
+    console.log('Failed to get projects', error)
     return []
   }
 }
