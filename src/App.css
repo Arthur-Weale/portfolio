@@ -827,7 +827,7 @@ nav ul li a:hover::after {
 
   .project1 {
     grid-template-columns: 1fr 2fr;
-    height: 250px;
+    height: 450px;
   }
 
   .project-image img {
@@ -841,9 +841,14 @@ nav ul li a:hover::after {
   }
 
   .left-view {
-    position: sticky;
+    position: relative;
     top: 80px;
+    margin-bottom: 60px;
   }
+
+.project-description {
+  align-items: center;
+}
 }
 
 /* Admin Dashboard */
