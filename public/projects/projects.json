@@ -1,5 +1,15 @@
 [
   {
+    "_id": "697d38300770eddccb573ffa",
+    "name": "Lofi Station",
+    "description": "A relaxing lo-fi web app with chill beats and calming vibes for studying, focusing, and unwinding",
+    "github": "https://github.com/Arthur-Weale/lofi-station.git",
+    "live": "https://lofistation.live/",
+    "image": "/projects/lofi.webp",
+    "stack": ["HTML", "React", "CSS", "TailwindCSS", "YouTube Api"],
+    "__v": 0
+  },
+  {
     "_id": "697d38300770eddccb573ffd",
     "name": "Wanderwise",
     "description": "An interactive web app for exploring cities worldwide with detailed data and images.",
