@@ -13,6 +13,9 @@ function Navigation(){
           <a href="#about">About</a>
         </li>
         <li>
+          <a href="#education">Education</a>
+        </li>
+        <li>
           <a href="#projects">Projects</a>
         </li>
         <li>
@@ -39,6 +42,9 @@ function Navigation(){
           <ul className="mobile-menu">
             <li>
               <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#education">Education</a>
             </li>
             <li>
               <a href="#projects">Projects</a>
