@@ -39,6 +39,9 @@ function Navigation(){
           <a href="#education">Education</a>
         </li>
         <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
           <a href="#projects">Projects</a>
         </li>
         <li>
@@ -77,6 +80,9 @@ function Navigation(){
             </li>
             <li>
               <a href="#education">Education</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
             </li>
             <li>
               <a href="#projects">Projects</a>
