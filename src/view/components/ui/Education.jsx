@@ -19,11 +19,15 @@ function Education() {
         <div className="education-item">
           <p className="education-label">Current studies</p>
           <h3>Bachelor&apos;s Degree in Software Development</h3>
+          <p className="education-meta">
+            Brigham Young University - Idaho through BYU-Pathway Worldwide
+          </p>
+          <p className="education-meta">
+            2024 - Present | Projected Graduation: 5/10/2027
+          </p>
           <p>
-            I am currently studying through BYU-Pathway Worldwide with Brigham
-            Young University - Idaho, continuing to build my software
-            development foundation through practical projects, problem solving,
-            and modern development tools.
+            I am continuing to build my software development foundation through
+            practical projects, problem solving, and modern development tools.
           </p>
         </div>
 
