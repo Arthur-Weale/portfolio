@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, useEffect} from "react";
 import ProjectCard from "./view/components/ui/ProjectCard";
 import About from "./view/components/ui/About";
+import Education from "./view/components/ui/Education";
 import Navigation from "./view/components/ui/Navigation";
 import Socials from "./view/components/ui/Social";
 import { CiGlobe } from "react-icons/ci";
@@ -194,6 +195,7 @@ return (
 
       <div className="right-view">
         <About />
+        <Education />
         <div className="projects">
           <ProjectCard />
           <div>
