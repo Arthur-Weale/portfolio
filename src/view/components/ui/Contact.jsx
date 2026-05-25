@@ -17,7 +17,7 @@ function Contact() {
           <button
             onClick={() =>
               window.open(
-                "https://mail.google.com/mail/?view=cm&fs=1&to=youremail@gmail.com&su=Let%27s%20Work%20Together&body=Hey%20Arthur,%20I%20saw%20your%20portfolio%20and...",
+                "https://mail.google.com/mail/?view=cm&fs=1&to=ajayrossy340@gmail.com&su=Let%27s%20Work%20Together&body=Hey%20Arthur,%20I%20saw%20your%20portfolio%20and...",
                 "_blank",
                 "noopener,noreferrer",
               )
