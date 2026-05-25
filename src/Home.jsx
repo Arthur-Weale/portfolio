@@ -6,6 +6,8 @@ import { useRef, useEffect} from "react";
 import ProjectCard from "./view/components/ui/ProjectCard";
 import About from "./view/components/ui/About";
 import Education from "./view/components/ui/Education";
+import Skills from "./view/components/ui/Skills";
+import Contact from "./view/components/ui/Contact";
 import Navigation from "./view/components/ui/Navigation";
 import Socials from "./view/components/ui/Social";
 import { CiGlobe } from "react-icons/ci";
@@ -196,6 +198,7 @@ return (
       <div className="right-view">
         <About />
         <Education />
+        <Skills />
         <div className="projects">
           <ProjectCard />
           <div>
@@ -205,6 +208,7 @@ return (
             </p>
           </div>
         </div>
+        <Contact />
       </div>
     </div>
   </>
